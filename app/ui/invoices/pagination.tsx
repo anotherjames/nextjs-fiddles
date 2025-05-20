@@ -1,23 +1,42 @@
 'use client';
 
+import { useDebouncedCallback } from 'use-debounce';
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { generatePagination } from '@/app/lib/utils';
+import {usePathname, useRouter, useSearchParams} from 'next/navigation';
 
-export default function Pagination({ totalPages }: { totalPages: number }) {
-  // NOTE: Uncomment this code in Chapter 11
+export default function Pagination({ totalPages, perPage }: { totalPages: number, perPage: number }) {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const params = new URLSearchParams(searchParams);
+  const currentPage = Number(searchParams.get('page')) || 1;
+  const { replace } = useRouter();
 
-  // const allPages = generatePagination(currentPage, totalPages);
+  const createPageURL = (pageNumber: number | string, perPage: number | string) => {
+    params.set('page', pageNumber.toString());
+    params.set('perPage', perPage.toString());
+    return `${pathname}?${params.toString()}`;
+  };
+
+  const handlePerPage = useDebouncedCallback((perPage: string, target: HTMLInputElement) => {
+    params.set('page', '1');
+    params.set('perPage', perPage);
+
+    target.value = perPage;
+
+    replace(`${pathname}?${params.toString()}`);
+  }, 300);
+
+  const allPages = generatePagination(currentPage, totalPages);
 
   return (
     <>
-      {/*  NOTE: Uncomment this code in Chapter 11 */}
-
-      {/* <div className="inline-flex">
+      <div className="inline-flex">
         <PaginationArrow
           direction="left"
-          href={createPageURL(currentPage - 1)}
+          href={createPageURL(currentPage - 1, perPage)}
           isDisabled={currentPage <= 1}
         />
 
@@ -33,7 +52,7 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
             return (
               <PaginationNumber
                 key={`${page}-${index}`}
-                href={createPageURL(page)}
+                href={createPageURL(page, perPage)}
                 page={page}
                 position={position}
                 isActive={currentPage === page}
@@ -44,10 +63,23 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
 
         <PaginationArrow
           direction="right"
-          href={createPageURL(currentPage + 1)}
+          href={createPageURL(currentPage + 1, perPage)}
           isDisabled={currentPage >= totalPages}
         />
-      </div> */}
+
+        <input
+          min="1"
+          max="25"
+          step="1"
+          className="flex-shrink block rounded-md border border-gray-200 py-[9px] text-sm outline-2 ml-2 md:ml-4"
+          type="number"
+          defaultValue={perPage}
+          onChange={(e) => {
+            handlePerPage(e.target.value, e.target);
+          }}
+          key={perPage}
+        />
+      </div>
     </>
   );
 }
