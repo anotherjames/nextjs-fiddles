@@ -19,7 +19,15 @@ export async function fetchRevenue() {
     console.log('Fetching revenue data...');
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
-    const data = await sql<Revenue[]>`SELECT * FROM revenue`;
+    const data = await sql<Revenue[]>`
+      SELECT * FROM revenue
+      ORDER BY
+        -- Order months from last year before those from this year.
+        CASE
+          WHEN EXTRACT(MONTH FROM to_date(month, 'Mon')) > EXTRACT(MONTH FROM CURRENT_DATE)
+          THEN (12 - EXTRACT(MONTH FROM to_date(month, 'Mon'))) * -1
+          ELSE EXTRACT(MONTH FROM to_date(month, 'Mon'))
+        END`;
 
     console.log('Data fetch completed after 3 seconds.');
 
