@@ -103,7 +103,8 @@ async function seedRevenue() {
 
 export async function GET() {
   try {
-    const result = await sql.begin((sql) => [
+    // Begins a transaction to allow full rollback in case of failure.
+    await sql.begin(() => [
       seedUsers(),
       seedCustomers(),
       seedInvoices(),
