@@ -12,7 +12,9 @@ database:
 host_db_port: "33009"
 use_dns_when_possible: true
 composer_version: "2"
-web_environment: []
+web_environment:
+  - AUTH_URL=http://nextjames.ddev.site/api/auth
+  - POSTGRES_URL=postgresql://db:db@db:5432/db
 corepack_enable: false
 
 # Key features of DDEV's config.yaml:
