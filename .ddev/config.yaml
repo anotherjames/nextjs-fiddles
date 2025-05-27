@@ -299,4 +299,11 @@ corepack_enable: false
 # See https://ddev.readthedocs.io/en/stable/users/extend/custom-commands/ for more
 # information on the commands that can be extended and the tasks you can define
 # for them. Example:
-#hooks:
+
+hooks:
+  post-start:
+    - exec: |
+        if [ ! -f node_modules/.modules.yaml ]; then
+          pnpm i
+        fi
+        pnpm dev

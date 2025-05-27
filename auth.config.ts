@@ -6,6 +6,12 @@ export const authConfig = {
   },
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
+      // Always allow access to some routes.
+      const isFavicon = nextUrl.pathname.startsWith('/favicon.ico');
+      if (isFavicon) {
+        return true;
+      }
+
       const isLoggedIn = !!auth?.user;
       const isOnDashboard = nextUrl.pathname.startsWith('/dashboard');
       if (isOnDashboard) {
