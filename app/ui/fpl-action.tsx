@@ -19,7 +19,7 @@ export default async function FplTable() {
                     p_cell.className
                   )} key={h_index}>
                     {
-                      p_cell.title && (<abbr title={p_cell.title}>{h_cell}</abbr>)
+                      p_cell.title && (<abbr title={p_cell.title}>{p_cell}</abbr>)
                       || p_cell
                     }
                   </th>
