@@ -35,7 +35,7 @@ export default async function FplTable() {
             {
               row.map((r_cell: Cell, c_index: number) => (
                 <td className={clsx(
-                  "border py-1 px-2 text-nowrap border-blue green poooooooorange",
+                  "border py-1 px-2 text-nowrap border-blue-500 green poooooooorange",
                   r_cell?.className,
                 )} key={c_index}>{r_cell}</td>
               ))
