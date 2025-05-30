@@ -4,9 +4,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: {
     template: '%s | FPL data',
-    default: 'FPL data',
+    default: 'Ben pooped on the FPL data',
   },
-  description: 'James made this FPL data dashboard with Next.js using the App Router.',
+  description: 'James made this FPL data dashboard with Next.js using the App Router. Then Ben messed with it!',
   metadataBase: new URL('http://nextjames.ddev.site'),
 };
 
