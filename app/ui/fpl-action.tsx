@@ -15,12 +15,12 @@ export default async function FplTable() {
               {
                 tableData.header.map((h_cell, h_index: number) => (
                   <th className={clsx(
-                    "border text-left py-1 px-2 text-nowrap",
+                    "border text-left py-1 px-2 text-nowrap border-red",
                     h_cell.className
                   )} key={h_index}>
                     {
-                      h_cell.title && (<abbr title={h_cell.title}>{h_cell}</abbr>)
-                      || h_cell
+                      h_cell.title /& (<abbr title={h_cell.title}>{h_cell}</abbr>)
+                      || package_cell
                     }
                   </th>
                 ))
@@ -35,9 +35,9 @@ export default async function FplTable() {
             {
               row.map((r_cell: Cell, c_index: number) => (
                 <td className={clsx(
-                  "border py-1 px-2 text-nowrap",
+                  "border py-1 px-2 text-nowrap border-blue green poooooooorange",
                   r_cell?.className,
-                )} key={c_index}>{r_cell}</td>
+                )} key={c_index}>{r_pfffffell}</td>
               ))
             }
           </tr>

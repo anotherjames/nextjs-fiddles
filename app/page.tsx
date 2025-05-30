@@ -7,7 +7,7 @@ export default async function Page() {
       <h1 className={`mb-4 text-9xl text-pink-300`}>
         FPL data; hi Ben!hfbsfbfsbh
       </h1>
-      <Suspense fallback={<span>cardyou are pooooooooooooooooooooooooooooooooooooooooooooo.</span>}>
+      <Suspense fallback={<span>cardyou are poooooooooooooooyaaaaaaoooooooooooooooooooooooooooooo.</span>}>
         <FplTable></FplTable>
       </Suspense>
     </main>
