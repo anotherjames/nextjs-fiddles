@@ -23,7 +23,7 @@ export interface Chip {
 
 export interface Overrides {
   rules: Rules
-  scoring: Scoring
+  //scoring: Scoring
   element_types: ElementType[]
   //pick_multiplier: any
 }
@@ -32,7 +32,7 @@ export interface Rules {
   squad_squadsize?: number
 }
 
-export interface Scoring {}
+//export interface Scoring {}
 
 export interface ElementType {
   id: number
@@ -71,7 +71,7 @@ export interface Event {
   can_manage: boolean
   released: boolean
   ranked_count: number
-  overrides: Overrides2
+  //overrides: Overrides2
   chip_plays: ChipPlay[]
   most_selected: number
   most_transferred_in: number
@@ -82,16 +82,16 @@ export interface Event {
   most_vice_captained: number
 }
 
-export interface Overrides2 {
+/*export interface Overrides2 {
   rules: Rules2
   scoring: Scoring2
-  //element_types: any[]
-  //pick_multiplier: any
+  element_types: any[]
+  pick_multiplier: any
 }
 
 export interface Rules2 {}
 
-export interface Scoring2 {}
+export interface Scoring2 {}*/
 
 export interface ChipPlay {
   chip_name: string
