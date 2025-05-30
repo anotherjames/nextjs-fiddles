@@ -25,7 +25,7 @@ export interface Overrides {
   rules: Rules
   scoring: Scoring
   element_types: ElementType[]
-  pick_multiplier: any
+  //pick_multiplier: any
 }
 
 export interface Rules {
@@ -41,8 +41,8 @@ export interface ElementType {
   singular_name: string
   singular_name_short: string
   squad_select: number
-  squad_min_select: any
-  squad_max_select: any
+  //squad_min_select: any
+  //squad_max_select: any
   squad_min_play: number
   squad_max_play: number
   ui_shirt_specific: boolean
@@ -54,7 +54,7 @@ export interface Event {
   id: number
   name: string
   deadline_time: string
-  release_time: any
+  //release_time: any
   average_entry_score: number
   finished: boolean
   data_checked: boolean
@@ -85,8 +85,8 @@ export interface Event {
 export interface Overrides2 {
   rules: Rules2
   scoring: Scoring2
-  element_types: any[]
-  pick_multiplier: any
+  //element_types: any[]
+  //pick_multiplier: any
 }
 
 export interface Rules2 {}
@@ -115,29 +115,29 @@ export interface GameSettings {
   league_points_h2h_lose: number
   league_points_h2h_draw: number
   league_ko_first_instead_of_random: boolean
-  cup_start_event_id: any
-  cup_stop_event_id: any
-  cup_qualifying_method: any
-  cup_type: any
-  featured_entries: any[]
+  //cup_start_event_id: any
+  //cup_stop_event_id: any
+  //cup_qualifying_method: any
+  //cup_type: any
+  //featured_entries: any[]
   element_sell_at_purchase_price: boolean
   percentile_ranks: number[]
   underdog_differential: number
   squad_squadplay: number
   squad_squadsize: number
-  squad_special_min: any
-  squad_special_max: any
-  squad_team_limit: number
+  //squad_special_min: any
+  //squad_special_max: any
+  //squad_team_limit: number
   squad_total_spend: number
   ui_currency_multiplier: number
   ui_use_special_shirts: boolean
-  ui_special_shirt_exclusions: any[]
+  //ui_special_shirt_exclusions: any[]
   stats_form_days: number
   sys_vice_captain_enabled: boolean
   transfers_cap: number
   transfers_sell_on_fee: number
   max_extra_free_transfers: number
-  league_h2h_tiebreak_stats: string[]
+  //league_h2h_tiebreak_stats: string[]
   timezone: string
 }
 
@@ -164,23 +164,23 @@ export interface Rules3 {
   league_points_h2h_lose: number
   league_points_h2h_draw: number
   league_ko_first_instead_of_random: boolean
-  cup_start_event_id: any
-  cup_stop_event_id: any
-  cup_qualifying_method: any
-  cup_type: any
-  featured_entries: any[]
+  //cup_start_event_id: any
+  //cup_stop_event_id: any
+  //cup_qualifying_method: any
+  //cup_type: any
+  //featured_entries: any[]
   element_sell_at_purchase_price: boolean
   percentile_ranks: number[]
   underdog_differential: number
   squad_squadplay: number
   squad_squadsize: number
-  squad_special_min: any
-  squad_special_max: any
+  //squad_special_min: any
+  //squad_special_max: any
   squad_team_limit: number
   squad_total_spend: number
   ui_currency_multiplier: number
   ui_use_special_shirts: boolean
-  ui_special_shirt_exclusions: any[]
+  //ui_special_shirt_exclusions: any[]
   stats_form_days: number
   sys_vice_captain_enabled: boolean
   transfers_cap: number
@@ -306,7 +306,7 @@ export interface Phase {
 export interface Team {
   code: number
   draw: number
-  form: any
+  //form: any
   id: number
   loss: number
   name: string
@@ -315,7 +315,7 @@ export interface Team {
   position: number
   short_name: string
   strength: number
-  team_division: any
+  //team_division: any
   unavailable: boolean
   win: number
   strength_overall_home: number
@@ -339,8 +339,8 @@ export interface Position {
   singular_name: string
   singular_name_short: string
   squad_select: number
-  squad_min_select: any
-  squad_max_select: any
+  //squad_min_select: any
+  //squad_max_select: any
   squad_min_play: number
   squad_max_play: number
   ui_shirt_specific: boolean
@@ -376,7 +376,7 @@ export interface Footballer {
   second_name: string
   selected_by_percent: string
   special: boolean
-  squad_number: any
+  //squad_number: any
   status: string
   team: number
   team_code: number
